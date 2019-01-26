@@ -1,0 +1,6 @@
+1、若是需要使用Siri控制，则iOS平台需要升级到iOS12，并下载‘捷径’APP（被苹果收购），安装好后配置捷径，下面是ios捷径的此项配置（请用苹果内置浏览器打开）：https://www.icloud.com/shortcuts/cc23835ce624430f83e5628b88bce13e （感谢http://wenzheng.club/ 提供的功能，Arduino程序也有使用其代码）
+2、在wenzheng的程序基础上，增加了ESP8266断电断网后重新上电的自动重连功能，这里感谢（http://www.lingsky.cn/post/2017/04/20/esp8266-smartconfig-wifi）提供的代码参考。
+3、arduino的smartconfig功能可以使用安卓或者苹果对其进行自动配网，文件中我给了我安卓版的apk，esptouch也可以，appstore也有对应的软件。
+4、关于硬件：淘宝15块买的NodeMCU Lua V3物联网开发板，不给链接了，免广嫌，淘宝一大堆。
+5：几点说明：在wenzheng的程序中改了LED的引脚号；修改了部分输出（涉及到配置捷径中的判断字符）；若要远程访问则可以修改server的端口号，以免冲突，测试下来捷径目前仅支持80端口，因此最好不要修改；指令判断的结束符需要注意，为\r，对应十六进制0x0D
+6：博客中会说明如何进行内网穿透，以达到真正远程控制。
