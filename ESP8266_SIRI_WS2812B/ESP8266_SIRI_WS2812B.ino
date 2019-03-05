@@ -103,7 +103,7 @@ void ColorChange(char* color)               //判断输入的颜色
   else if(strstr(color,"LightLEMONYELLOW") != NULL){
     R = 255; G = 255; B = 0;
   }
-  else if(strstr(color,"LightWHITE")||strstr(color,"LightOn") != NULL){
+  else if(strstr(color,"LightWHITE1")||strstr(color,"LightOn") != NULL){
     R = 255; G = 255; B = 255;
   }
   else if(strstr(color, "LightBlink1") != NULL){         //按当前颜色闪烁
@@ -305,7 +305,7 @@ bool RequestInfo(String req){
     Serial.println("变为蓝色！");
     return true;
     }
-  else if (req.indexOf("/LightWHITE") != -1){              //对WS2812B灯条的操作“白”
+  else if (req.indexOf("/LightWHITE1") != -1){              //对WS2812B灯条的操作“白”
     SingleColor();
     Serial.println("变为白色！");
     return true;
@@ -332,10 +332,15 @@ bool RequestInfo(String req){
     }
     else if (req.indexOf("/LightWHITEADD") != -1){              //对WS2812B灯条的操作“白亮”
     R = 255; G = 255; B = 255;
+    for(int i=0; i <= NUM_LEDS; i++){
+      leds[i] = CRGB(0, 0, 0);
+    }
     if(n<8){n += 2;}
     else{n=8;}
     for(int i=0; i <= n; i++){
       leds[i] = CRGB(R, G, B);
+      //Serial.print(leds[i]);
+      //Serial.print(" ");
     }
     FastLED.show();
     setmode = 0;
@@ -344,10 +349,15 @@ bool RequestInfo(String req){
     }
     else if (req.indexOf("/LightWHITEMIN") != -1){              //对WS2812B灯条的操作“白暗”
     R = 255; G = 255; B = 255;
+    for(int i=0; i <= NUM_LEDS; i++){
+      leds[i] = CRGB(0, 0, 0);
+    }
     if(n>=3){n -= 2;}
     else{n=1;}
     for(int i=0; i <= n; i++){
       leds[i] = CRGB(R, G, B);
+      //Serial.print(leds[i]);
+      //Serial.print(" ");
     }
     FastLED.show();
     setmode = 0;
