@@ -1,8 +1,8 @@
 include "sim800c_onenet.h"
 
-const char* DEV_ID = "587254975"; //设备ID
-const char* DEV_PRO_ID = "324049"; //产品ID
-const char* DEV_KEY = "dEWNtkuq3awc9f4lZTRMXM3gXG8="; //master API KEY
+const char* DEV_ID = "xxxxxxxxx"; //设备ID
+const char* DEV_PRO_ID = "xxxxxxxxxxx"; //产品ID
+const char* DEV_KEY = "xxxxxxxxxxxxxxxx"; //master API KEY
 
 sim800c sim800c(16,17);
 
